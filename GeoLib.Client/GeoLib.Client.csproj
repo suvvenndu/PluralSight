@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A618A33-EA90-4A16-9C38-F5CD747A4DE1}</ProjectGuid>
+    <ProjectGuid>{88D44C27-F2B0-450A-A5B1-53093AC4D835}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeopleViewer</RootNamespace>
-    <AssemblyName>PeopleViewer</AssemblyName>
+    <RootNamespace>GeoLib.Client</RootNamespace>
+    <AssemblyName>GeoLib.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,16 +34,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -62,11 +57,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Converters.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,7 +88,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,33 +98,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PeopleViewer.Presentation\PeopleViewer.Presentation.csproj">
-      <Project>{13925da9-a1c1-4a83-80d9-5c7606f8ca24}</Project>
-      <Name>PeopleViewer.Presentation</Name>
+    <ProjectReference Include="..\GeoLib.Contract\GeoLib.Contract.csproj">
+      <Project>{0fd6a58e-405a-4428-bae8-d641a585ac93}</Project>
+      <Name>GeoLib.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PeopleViewer.SharedObjects\PeopleViewer.SharedObjects.csproj">
-      <Project>{4e9917db-270f-4ad0-8372-1e99bad9633b}</Project>
-      <Name>PeopleViewer.SharedObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PeopleViewer.View\PeopleViewer.View.csproj">
-      <Project>{8fc86af9-316e-44e8-89e9-0755192a5e93}</Project>
-      <Name>PeopleViewer.View</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersonRepository.CachingDecorator\PersonRepository.CachingDecorator.csproj">
-      <Project>{898C1EA9-324B-48CE-917B-053C842EA0A0}</Project>
-      <Name>PersonRepository.CachingDecorator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersonRepository.CSV\PersonRepository.CSV.csproj">
-      <Project>{ffd44c2c-2607-4784-9963-dd9fc4c09617}</Project>
-      <Name>PersonRepository.CSV</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
-      <Project>{87afb5e8-4f0f-4b00-bd93-2c95cdbb8d12}</Project>
-      <Name>PersonRepository.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersonRepository.Service\PersonRepository.Service.csproj">
-      <Project>{3ff145d3-8d18-460c-9f56-6dcb72d7ebbf}</Project>
-      <Name>PersonRepository.Service</Name>
+    <ProjectReference Include="..\GeoLib.Proxies\GeoLib.Proxies.csproj">
+      <Project>{6DEDBBDC-A1B0-481A-8FB1-2F07924B4F82}</Project>
+      <Name>GeoLib.Proxies</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

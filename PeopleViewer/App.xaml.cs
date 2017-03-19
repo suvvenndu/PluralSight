@@ -1,14 +1,6 @@
 ﻿using PeopleViewer.Presentation;
 using PersonRepository.CachingDecorator;
-using PersonRepository.CSV;
 using PersonRepository.Service;
-using PersonRepository.SQL;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PeopleViewer

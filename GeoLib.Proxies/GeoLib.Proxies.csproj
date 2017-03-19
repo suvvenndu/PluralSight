@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A11E7EF-F68C-4F9F-BCCC-4B7AB77B0A5E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{6DEDBBDC-A1B0-481A-8FB1-2F07924B4F82}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeoLib.ConsoleHost</RootNamespace>
-    <AssemblyName>GeoLib.ConsoleHost</AssemblyName>
+    <RootNamespace>GeoLib.Proxies</RootNamespace>
+    <AssemblyName>GeoLib.Proxies</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,18 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="GeoClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GeoLib.Services\GeoLib.Services.csproj">
-      <Project>{05121EB4-50C0-4570-AB91-4A243568FDAE}</Project>
-      <Name>GeoLib.Services</Name>
+    <ProjectReference Include="..\GeoLib.Contract\GeoLib.Contract.csproj">
+      <Project>{0fd6a58e-405a-4428-bae8-d641a585ac93}</Project>
+      <Name>GeoLib.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
