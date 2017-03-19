@@ -54,6 +54,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeoLib.Contract\GeoLib.Contract.csproj">
+      <Project>{0fd6a58e-405a-4428-bae8-d641a585ac93}</Project>
+      <Name>GeoLib.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GeoLib.Services\GeoLib.Services.csproj">
       <Project>{05121EB4-50C0-4570-AB91-4A243568FDAE}</Project>
       <Name>GeoLib.Services</Name>
