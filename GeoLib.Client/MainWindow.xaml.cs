@@ -56,6 +56,8 @@ namespace GeoLib.Client
 
             proxy.GetStates(true);
 
+            factory.Close();
+
         }
     }
 }
