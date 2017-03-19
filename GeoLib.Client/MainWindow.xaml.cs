@@ -1,8 +1,10 @@
 ﻿using GeoLib.Contract;
+using GeoLib.Contracts;
 using GeoLib.Proxies;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,6 +51,10 @@ namespace GeoLib.Client
 
         private void btnMakeCall_Click(object sender, RoutedEventArgs e)
         {
+            ChannelFactory<IGeoService> factory = new ChannelFactory<IGeoService>("");
+            IGeoService proxy = factory.CreateChannel();
+
+            proxy.GetStates(true);
 
         }
     }
