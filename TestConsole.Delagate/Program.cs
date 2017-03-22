@@ -18,11 +18,19 @@ namespace TestConsole.Delagate
             // DelegateTestClass dClass = new DelegateTestClass(x => { Console.WriteLine(x); });
             //dClass.handler = (x) => { Console.WriteLine("Hi...."); };
             //DelegateTestClass dClass = new DelegateTestClass(DoSomeThing);
+            try
+            {
 
-            DelegateTestClass dClass = new DelegateTestClass();
-            dClass.DoCallBack(DoSomeThing);
+                DelegateTestClass dClass = new DelegateTestClass();
+                dClass.DoCallBack(DoSomeThing);
 
-            Console.ReadLine();
+                Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
         }
     }
 }
